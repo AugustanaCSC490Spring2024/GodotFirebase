@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://db8ovfmcsbe5d"]
+
+[ext_resource type="Theme" uid="uid://cxvt17n1jhfx7" path="res://main_theme.tres" id="1_1nmir"]
+[ext_resource type="Script" path="res://username_label.gd" id="1_dac67"]
+[ext_resource type="Script" path="res://log_out_button.gd" id="2_fc631"]
+[ext_resource type="Script" path="res://save_button.gd" id="3_njbqs"]
+[ext_resource type="Script" path="res://loader.gd" id="4_mhgtn"]
+
+[node name="TestCloudSaving" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("1_1nmir")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 7.0
+offset_right = 218.0
+offset_bottom = 43.0
+text = "USERNAME:"
+
+[node name="Username" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 129.0
+offset_top = 8.0
+offset_right = 291.0
+offset_bottom = 31.0
+text = "name"
+script = ExtResource("1_dac67")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 109.333
+offset_right = 556.0
+offset_bottom = 296.333
+alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+placeholder_text = "Character name"
+
+[node name="SpinBox" type="SpinBox" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+
+[node name="SaveButton" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "save "
+script = ExtResource("3_njbqs")
+
+[node name="LogoutButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "log out"
+script = ExtResource("2_fc631")
+
+[node name="Loader" type="Node" parent="."]
+script = ExtResource("4_mhgtn")
+
+[connection signal="pressed" from="VBoxContainer/SaveButton" to="VBoxContainer/SaveButton" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/LogoutButton" to="VBoxContainer/LogoutButton" method="_on_pressed"]

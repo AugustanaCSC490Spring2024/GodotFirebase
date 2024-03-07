@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqyimh5afqvod"]
+
+[ext_resource type="Script" path="res://log_out_button.gd" id="1_5tf53"]
+[ext_resource type="Script" path="res://username_label.gd" id="1_v3n68"]
+[ext_resource type="Theme" uid="uid://cxvt17n1jhfx7" path="res://main_theme.tres" id="1_xi2cq"]
+
+[node name="TestAuthorization" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("1_xi2cq")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 274.667
+offset_top = 158.667
+offset_right = 468.667
+offset_bottom = 187.667
+text = "In game, logged in as"
+
+[node name="Username" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 276.667
+offset_top = 208.667
+offset_right = 438.667
+offset_bottom = 231.667
+text = "name"
+script = ExtResource("1_v3n68")
+
+[node name="LogoutButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 249.0
+offset_bottom = 58.0
+text = "log out"
+script = ExtResource("1_5tf53")
+
+[connection signal="pressed" from="LogoutButton" to="LogoutButton" method="_on_pressed"]

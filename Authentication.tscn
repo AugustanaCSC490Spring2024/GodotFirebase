@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://da2k7ryr1coka"]
+
+[ext_resource type="Theme" uid="uid://cxvt17n1jhfx7" path="res://main_theme.tres" id="1_1j12k"]
+[ext_resource type="Script" path="res://authentication.gd" id="1_p52jh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ollin"]
+font_size = 32
+
+[node name="Authentication" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("1_1j12k")
+script = ExtResource("1_p52jh")
+
+[node name="MessageLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 14.3333
+offset_top = 49.3333
+offset_right = 754.333
+offset_bottom = 95.3333
+text = "Enter email and password:"
+label_settings = SubResource("LabelSettings_ollin")
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 13.3333
+offset_top = 93.3333
+offset_right = 753.333
+offset_bottom = 390.333
+alignment = 1
+
+[node name="EmailLineEdit" type="LineEdit" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "enter email"
+
+[node name="PasswordLineEdit" type="LineEdit" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "enter password"
+secret = true
+
+[node name="LoginButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Log in"
+
+[node name="SignupButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Sign up"
+
+[connection signal="pressed" from="VBoxContainer/LoginButton" to="." method="_on_login_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SignupButton" to="." method="_on_signup_button_pressed"]
