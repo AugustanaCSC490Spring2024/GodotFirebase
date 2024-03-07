@@ -1,5 +1,5 @@
 extends Node
-@export var login_scene_path = "res://Menus & Util/Authentication/authentication.tscn"
+@export var login_scene_path = "res://authentication.tscn"
 
 func _on_pressed():
 	Firebase.Auth.logout()

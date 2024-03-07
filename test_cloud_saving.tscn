@@ -9,7 +9,6 @@
 [node name="TestCloudSaving" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-scale = Vector2(1.5, 1.5)
 theme = ExtResource("1_1nmir")
 
 [node name="Label" type="Label" parent="."]
@@ -32,27 +31,24 @@ script = ExtResource("1_dac67")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 194.0
-offset_top = 109.333
-offset_right = 556.0
-offset_bottom = 296.333
+offset_left = 398.0
+offset_top = 215.0
+offset_right = 760.0
+offset_bottom = 402.0
 alignment = 1
 
 [node name="LineEdit" type="LineEdit" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
 placeholder_text = "Character name"
 
 [node name="SpinBox" type="SpinBox" parent="VBoxContainer"]
-texture_filter = 1
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="SaveButton" type="Button" parent="VBoxContainer"]
-texture_filter = 1
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
-text = "save "
+text = "save"
 script = ExtResource("3_njbqs")
 
 [node name="LogoutButton" type="Button" parent="VBoxContainer"]
