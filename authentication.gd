@@ -8,7 +8,7 @@ extends Control
 
 
 func _ready():
-	# connect to Firebase
+	# connect to "res://export_presets.cfg"Firebase
 	Firebase.Auth.login_succeeded.connect(on_login_succeeded)
 	Firebase.Auth.signup_succeeded.connect(on_signup_succeeded)
 	Firebase.Auth.login_failed.connect(on_login_failed)
